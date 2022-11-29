@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="379.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.firstjfx.HelloController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.1428495134626" minWidth="9.000000953674316" prefWidth="33.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.1428495134626" minWidth="10.0" prefWidth="89.71428571428571" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="530.9999923706055" minWidth="10.0" prefWidth="209.85714285714283" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="530.9999923706055" minWidth="10.0" prefWidth="95.85714285714289" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="128.28571428571428" minHeight="0.0" prefHeight="106.42857142857143" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="338.85715811593195" minHeight="0.0" prefHeight="91.00000000000001" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="363.4285866873605" minHeight="10.0" prefHeight="74.42858668736051" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="337.2857142857143" minHeight="10.0" prefHeight="129.57141331263955" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TextField id="usernameTextField" fx:id="usernameTextField" GridPane.columnIndex="2" />
+      <Label prefHeight="17.0" prefWidth="86.0" text="Username" GridPane.columnIndex="1" />
+      <Label text="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField id="passwordTextField" fx:id="passwordTextField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <ButtonBar GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <buttons>
+          <Button id="submitButton" fx:id="submitButton" mnemonicParsing="false" onAction="#submitDetails" text="Submit" />
+            <Button id="cancelButton" fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelDetails" text="Cancel" />
+        </buttons>
+      </ButtonBar>
+      <Button id="clearUserNameButton" fx:id="clearUserNameButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearUserName" text="Clear" GridPane.columnIndex="3" />
+      <Button id="clearPasswordButton" fx:id="clearPasswordButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearPassword" text="Clear" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <Label fx:id="loggedinText" contentDisplay="CENTER" prefHeight="17.0" prefWidth="256.0" text="LOGGED IN!" textAlignment="CENTER" textFill="#f20303" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+   </children>
+</GridPane>
