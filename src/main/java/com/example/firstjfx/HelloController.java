@@ -1,14 +1,17 @@
 package com.example.firstjfx;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.Circle;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+import java.io.IOException;
 import java.util.Arrays;
 
 public class HelloController {
@@ -16,6 +19,10 @@ public class HelloController {
 
     private final String[] usernames = {"Ted", "Sam", "Tim", "Admin"};
     private final String[] passwords = {"123", "3da", "asddf", "adminps"};
+    @FXML
+    public Label userNameLabel;
+    @FXML
+    public Label passwordLabel;
 
     @FXML
     public Button submitButton;
@@ -38,52 +45,34 @@ public class HelloController {
     @FXML
     public Label loggedinText;
 
+    private Stage quizStage;
+    private Scene quizScene;
+
+
 
     @FXML
-    public Stage stage;
-    @FXML
-    public Button btnHello;
-    @FXML
-    public Button btnBye;
-    private boolean changed = false;
-    @FXML
-    private Label welcomeText;
+    protected void setUpQuiz(ActionEvent event) throws IOException {
+        submitButton.setVisible(false);
+        cancelButton.setVisible(false);
+        clearUserNameButton.setVisible(false);
+        clearPasswordButton.setVisible(false);
+        usernameTextField.setVisible(false);
+        passwordTextField.setVisible(false);
+        userNameLabel.setVisible(false);
+        passwordLabel.setVisible(false);
 
-    @FXML
-    protected Circle crcMain;
-
-    @FXML
-    protected void onCircleClick() {
-        welcomeText.setText("Wow you're cool!");
-        if(!changed) {
-            crcMain.setRadius(50);
-            changed = true;
-            crcMain.setFill(Paint.valueOf("white"));
-        }
-        else{
-            crcMain.setRadius(100);
-            changed = false;
-            crcMain.setFill(Paint.valueOf("green"));
-        }
+        Parent root =  FXMLLoader.load(getClass().getResource("quizSceme.fxml"));
+        // Change the size of the window, stage is controlled by the scene
+        quizStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        quizScene = new Scene(root, 375, 300);
+        quizStage.setScene(quizScene);
+        quizStage.show();
     }
 
-    @FXML
-    protected void onByeButtonClick() {
-        welcomeText.setText("See ya!");
-        btnBye.setText("Bye bye");
 
-        if(!changed) {
-            changed = true;
-            crcMain.setFill(Paint.valueOf("white"));
-        }
-        else{
-            changed = false;
-            crcMain.setFill(Paint.valueOf("green"));
-        }
-    }
 
     @FXML
-    protected void submitDetails() {
+    protected void submitDetails(ActionEvent event) throws IOException {
         boolean loggedIn = false;
         if(Arrays.asList(usernames).contains(usernameTextField.getText())){
             // Get the index of this username
@@ -91,20 +80,21 @@ public class HelloController {
             // If the password equals that usernames password then return true
             if(passwords[indexOfUserName].equals(passwordTextField.getText())){
                 loggedIn = true;
+                //loggedinText.setVisible(true);
             }
 
-            usernameTextField.setText("");
-            passwordTextField.setText("");
+        }
+        usernameTextField.setText("");
+        passwordTextField.setText("");
 
-            loggedinText.setVisible(true);
-
+        if(loggedIn){
+            setUpQuiz(event);
         }
 
     }
 
     @FXML
     protected void cancelDetails() {
-        clearPasswordButton.setText("a");
         usernameTextField.setText("");
         passwordTextField.setText("");
     }

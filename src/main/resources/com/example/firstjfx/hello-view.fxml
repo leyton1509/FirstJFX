@@ -18,9 +18,9 @@
       <RowConstraints maxHeight="337.2857142857143" minHeight="10.0" prefHeight="129.57141331263955" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TextField id="usernameTextField" fx:id="usernameTextField" GridPane.columnIndex="2" />
-      <Label prefHeight="17.0" prefWidth="86.0" text="Username" GridPane.columnIndex="1" />
-      <Label text="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField  fx:id="usernameTextField" GridPane.columnIndex="2" />
+      <Label fx:id="userNameLabel" prefHeight="17.0" prefWidth="86.0" text="Username" GridPane.columnIndex="1" />
+      <Label fx:id="passwordLabel" text="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <TextField id="passwordTextField" fx:id="passwordTextField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
       <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <ButtonBar GridPane.columnIndex="2" GridPane.rowIndex="2">
