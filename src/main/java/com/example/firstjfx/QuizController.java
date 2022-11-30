@@ -157,12 +157,9 @@ public class QuizController implements Initializable {
         noteLabel.setText(questionHandler.returnQuestion(questionNumber).getNote());
 
         // Gets the correct answer
-
-
         String typeOfQ = questionHandler.returnQuestion(questionNumber).getQuestionType();
 
         // If the answer and the corresponding checkbox is checked then the user got it right
-
         if(typeOfQ.equals("checkbox")){
             int ansLoc = questionHandler.returnQuestion(questionNumber).getCorrectAnswerNumber();
             if(ansLoc == 0){
@@ -195,8 +192,13 @@ public class QuizController implements Initializable {
                 System.out.println("Answer of " + ans + " correct");
             }
         }
+    }
 
-
+    public void setVisibleCheckboxes(boolean one, boolean two, boolean three, boolean four){
+        checkbox1.setVisible(one);
+        checkbox2.setVisible(two);
+        checkbox3.setVisible(three);
+        checkbox4.setVisible(four);
     }
 
     /**
@@ -216,10 +218,7 @@ public class QuizController implements Initializable {
 
         // Sets the checkboxes to unselected for every question
 
-        checkbox1.setSelected(false);
-        checkbox2.setSelected(false);
-        checkbox3.setSelected(false);
-        checkbox4.setSelected(false);
+        setVisibleCheckboxes(false, false, false,false);
         inputAnswerBox.setText("");
 
         // Depending on the amount of answers, display the right amount of checkboxes
@@ -228,20 +227,14 @@ public class QuizController implements Initializable {
             inputAnswerBox.setVisible(false);
             switch (currentQuestion.getNumOfAnswers()){
                 case 2:
-                    checkbox1.setVisible(true);
-                    checkbox2.setVisible(true);
-                    checkbox3.setVisible(false);
-                    checkbox4.setVisible(false);
+                    setVisibleCheckboxes(true, true, false,false);
 
                     checkbox1.setText(currentQuestion.getAnswers()[0]);
                     checkbox2.setText(currentQuestion.getAnswers()[1]);
 
                     break;
                 case 3:
-                    checkbox1.setVisible(true);
-                    checkbox2.setVisible(true);
-                    checkbox3.setVisible(true);
-                    checkbox4.setVisible(false);
+                    setVisibleCheckboxes(true, true, true,false);
 
                     checkbox1.setText(currentQuestion.getAnswers()[0]);
                     checkbox2.setText(currentQuestion.getAnswers()[1]);
@@ -249,10 +242,7 @@ public class QuizController implements Initializable {
 
                     break;
                 case 4:
-                    checkbox1.setVisible(true);
-                    checkbox2.setVisible(true);
-                    checkbox3.setVisible(true);
-                    checkbox4.setVisible(true);
+                    setVisibleCheckboxes(true, true, true,true);
 
                     checkbox1.setText(currentQuestion.getAnswers()[0]);
                     checkbox2.setText(currentQuestion.getAnswers()[1]);
@@ -263,10 +253,7 @@ public class QuizController implements Initializable {
 
             }
         } else if (currentQuestion.getQuestionType().equals("inputType")){
-            checkbox1.setVisible(false);
-            checkbox2.setVisible(false);
-            checkbox3.setVisible(false);
-            checkbox4.setVisible(false);
+            setVisibleCheckboxes(false, false, false,false);
             inputAnswerBox.setVisible(true);
         }
 
