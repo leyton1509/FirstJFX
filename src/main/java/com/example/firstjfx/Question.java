@@ -27,6 +27,12 @@ public class Question {
     private String note = "";
 
     /**
+     * The type of question
+     */
+
+    private String questionType;
+
+    /**
      * Getter for question number
      */
 
@@ -62,17 +68,27 @@ public class Question {
      * Gets the amount of answers of the scene
      */
 
+
     public int getNumOfAnswers() {
         return answers.length;
     }
 
     /**
+     * @return the type of the question
+     */
+    public String getQuestionType() {
+        return questionType;
+    }
+
+    /**
+     * @param _questionType the type of the question
      * @param _qNum the number of the question
      * @param _qTitle the title of the question
      * @param _answers the answers to the question
      * @param _correctAnswer the correct answer number
      */
-    public Question(int _qNum, String _qTitle, String[] _answers, int _correctAnswer){
+    public Question(String _questionType, int _qNum, String _qTitle, String[] _answers, int _correctAnswer){
+        questionType = _questionType;
         questionNumber = _qNum;
         questionTitle = _qTitle;
         answers = _answers;
@@ -87,20 +103,23 @@ public class Question {
     }
 
     /**
+     * @param _questionType the type of the question
      * @param _qNum the number of the question
      * @param _qTitle the title of the question
      * @param _answers the answers to the question
      * @param _correctAnswer the correct answer number
      * @param _note the note to the end of the question
      */
-    public Question(int _qNum, String _qTitle, String[] _answers, int _correctAnswer, String _note){
+    public Question(String _questionType, int _qNum, String _qTitle, String[] _answers, int _correctAnswer, String _note){
+        questionType = _questionType;
         questionNumber = _qNum;
         questionTitle = _qTitle;
         answers = _answers;
         correctAnswerNumber = _correctAnswer;
         note = _note;
-
     }
+
+
 
 
 

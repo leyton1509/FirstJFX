@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aabd948-f8cb-4b44-b713-089679467fee" name="Changes" comment="Added javadoc">
+    <list default="true" id="7aabd948-f8cb-4b44-b713-089679467fee" name="Changes" comment="Added an alert to signing in">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuestionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuestionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuizController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +84,8 @@
       <workItem from="1669736954004" duration="864000" />
       <workItem from="1669802286004" duration="443000" />
       <workItem from="1669802741322" duration="9510000" />
-      <workItem from="1669818391572" duration="1939000" />
+      <workItem from="1669818391572" duration="2580000" />
+      <workItem from="1669840809570" duration="1456000" />
     </task>
     <task id="LOCAL-00001" summary="Working logging system">
       <created>1669737780272</created>
@@ -112,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669819918814</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added an alert to signing in">
+      <created>1669820341798</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669820341798</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +144,8 @@
     <MESSAGE value="Quiz system working" />
     <MESSAGE value="Changed the bg colour" />
     <MESSAGE value="Added javadoc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added javadoc" />
+    <MESSAGE value="Added an alert to signing in" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an alert to signing in" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

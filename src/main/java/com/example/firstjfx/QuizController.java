@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -104,6 +105,9 @@ public class QuizController implements Initializable {
      * Question handler which handles question info
      */
 
+    @FXML
+    protected TextField inputAnswerBox;
+
     private QuestionHandler questionHandler = new QuestionHandler();
 
     /**
@@ -154,32 +158,45 @@ public class QuizController implements Initializable {
 
         // Gets the correct answer
 
-        int ansLoc = questionHandler.returnQuestion(questionNumber).getCorrectAnswerNumber();
+
+        String typeOfQ = questionHandler.returnQuestion(questionNumber).getQuestionType();
 
         // If the answer and the corresponding checkbox is checked then the user got it right
 
-        if(ansLoc == 0){
-            if(checkbox1.isSelected() && !checkbox2.isSelected() && !checkbox3.isSelected() && !checkbox4.isSelected()){
-                questionHandler.increaseScore();
-                System.out.println("Answer 1 correct");
+        if(typeOfQ.equals("checkbox")){
+            int ansLoc = questionHandler.returnQuestion(questionNumber).getCorrectAnswerNumber();
+            if(ansLoc == 0){
+                if(checkbox1.isSelected() && !checkbox2.isSelected() && !checkbox3.isSelected() && !checkbox4.isSelected()){
+                    questionHandler.increaseScore();
+                    System.out.println("Answer 1 correct");
+                }
+            }else if(ansLoc == 1){
+                if(!checkbox1.isSelected() && checkbox2.isSelected() && !checkbox3.isSelected() && !checkbox4.isSelected()){
+                    questionHandler.increaseScore();
+                    System.out.println("Answer 2 correct");
+                }
+            }else if(ansLoc == 2){
+                if(!checkbox1.isSelected() && !checkbox2.isSelected() && checkbox3.isSelected() && !checkbox4.isSelected()){
+                    questionHandler.increaseScore();
+                    System.out.println("Answer 3 correct");
+                }
             }
-        }else if(ansLoc == 1){
-            if(!checkbox1.isSelected() && checkbox2.isSelected() && !checkbox3.isSelected() && !checkbox4.isSelected()){
-                questionHandler.increaseScore();
-                System.out.println("Answer 2 correct");
-            }
-        }else if(ansLoc == 2){
-            if(!checkbox1.isSelected() && !checkbox2.isSelected() && checkbox3.isSelected() && !checkbox4.isSelected()){
-                questionHandler.increaseScore();
-                System.out.println("Answer 3 correct");
+            else if(ansLoc == 3){
+                if(!checkbox1.isSelected() && !checkbox2.isSelected() && !checkbox3.isSelected() && checkbox4.isSelected()){
+                    questionHandler.increaseScore();
+                    System.out.println("Answer 4 correct");
+                }
             }
         }
-        else if(ansLoc == 3){
-            if(!checkbox1.isSelected() && !checkbox2.isSelected() && !checkbox3.isSelected() && checkbox4.isSelected()){
+        else if (typeOfQ.equals("inputType")){
+            String ans = questionHandler.returnQuestion(questionNumber).getAnswers()[0];
+            if(inputAnswerBox.getText().equals(ans)){
                 questionHandler.increaseScore();
-                System.out.println("Answer 4 correct");
+                System.out.println("Answer of " + ans + " correct");
             }
         }
+
+
     }
 
     /**
@@ -203,45 +220,56 @@ public class QuizController implements Initializable {
         checkbox2.setSelected(false);
         checkbox3.setSelected(false);
         checkbox4.setSelected(false);
+        inputAnswerBox.setText("");
 
         // Depending on the amount of answers, display the right amount of checkboxes
 
-        switch (currentQuestion.getNumOfAnswers()){
-            case 2:
-                checkbox1.setVisible(true);
-                checkbox2.setVisible(true);
-                checkbox3.setVisible(false);
-                checkbox4.setVisible(false);
+        if(currentQuestion.getQuestionType().equals("checkbox")){
+            inputAnswerBox.setVisible(false);
+            switch (currentQuestion.getNumOfAnswers()){
+                case 2:
+                    checkbox1.setVisible(true);
+                    checkbox2.setVisible(true);
+                    checkbox3.setVisible(false);
+                    checkbox4.setVisible(false);
 
-                checkbox1.setText(currentQuestion.getAnswers()[0]);
-                checkbox2.setText(currentQuestion.getAnswers()[1]);
+                    checkbox1.setText(currentQuestion.getAnswers()[0]);
+                    checkbox2.setText(currentQuestion.getAnswers()[1]);
 
-                break;
-            case 3:
-                checkbox1.setVisible(true);
-                checkbox2.setVisible(true);
-                checkbox3.setVisible(true);
-                checkbox4.setVisible(false);
+                    break;
+                case 3:
+                    checkbox1.setVisible(true);
+                    checkbox2.setVisible(true);
+                    checkbox3.setVisible(true);
+                    checkbox4.setVisible(false);
 
-                checkbox1.setText(currentQuestion.getAnswers()[0]);
-                checkbox2.setText(currentQuestion.getAnswers()[1]);
-                checkbox3.setText(currentQuestion.getAnswers()[2]);
+                    checkbox1.setText(currentQuestion.getAnswers()[0]);
+                    checkbox2.setText(currentQuestion.getAnswers()[1]);
+                    checkbox3.setText(currentQuestion.getAnswers()[2]);
 
-                break;
-            case 4:
-                checkbox1.setVisible(true);
-                checkbox2.setVisible(true);
-                checkbox3.setVisible(true);
-                checkbox4.setVisible(true);
+                    break;
+                case 4:
+                    checkbox1.setVisible(true);
+                    checkbox2.setVisible(true);
+                    checkbox3.setVisible(true);
+                    checkbox4.setVisible(true);
 
-                checkbox1.setText(currentQuestion.getAnswers()[0]);
-                checkbox2.setText(currentQuestion.getAnswers()[1]);
-                checkbox3.setText(currentQuestion.getAnswers()[2]);
-                checkbox4.setText(currentQuestion.getAnswers()[3]);
+                    checkbox1.setText(currentQuestion.getAnswers()[0]);
+                    checkbox2.setText(currentQuestion.getAnswers()[1]);
+                    checkbox3.setText(currentQuestion.getAnswers()[2]);
+                    checkbox4.setText(currentQuestion.getAnswers()[3]);
 
-                break;
+                    break;
 
+            }
+        } else if (currentQuestion.getQuestionType().equals("inputType")){
+            checkbox1.setVisible(false);
+            checkbox2.setVisible(false);
+            checkbox3.setVisible(false);
+            checkbox4.setVisible(false);
+            inputAnswerBox.setVisible(true);
         }
+
 
     }
 
