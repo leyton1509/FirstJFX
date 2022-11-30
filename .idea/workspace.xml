@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aabd948-f8cb-4b44-b713-089679467fee" name="Changes" comment="Reput in code that was accidentally deleted with making the text boxes visible">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/ScoreController.java" afterDir="false" />
+    <list default="true" id="7aabd948-f8cb-4b44-b713-089679467fee" name="Changes" comment="Added a new controller and scence which will be the score and feedback">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuestionAnswers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuestionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuestionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuizController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/ScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/ScoreController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +50,12 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="L:\Novus\Code\JFX\FirstJFX\target\classes\com\example\firstjfx" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.firstjfx" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.firstjfx" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -84,7 +92,7 @@
       <workItem from="1669802286004" duration="443000" />
       <workItem from="1669802741322" duration="9510000" />
       <workItem from="1669818391572" duration="2580000" />
-      <workItem from="1669840809570" duration="2166000" />
+      <workItem from="1669840809570" duration="5238000" />
     </task>
     <task id="LOCAL-00001" summary="Working logging system">
       <created>1669737780272</created>
@@ -142,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669842715814</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added a new controller and scence which will be the score and feedback">
+      <created>1669843012414</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669843012414</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +183,8 @@
     <MESSAGE value="Added support for a new question type, where the user can enter an answer instead" />
     <MESSAGE value="Moved check box visible commands into a method for redundacy" />
     <MESSAGE value="Reput in code that was accidentally deleted with making the text boxes visible" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reput in code that was accidentally deleted with making the text boxes visible" />
+    <MESSAGE value="Added a new controller and scence which will be the score and feedback" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a new controller and scence which will be the score and feedback" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

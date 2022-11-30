@@ -16,10 +16,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class QuizController implements Initializable {
+
+    /**
+     * A list of all the answers
+     */
+
+    private ArrayList<String> userAnswers;
 
 
     /**
@@ -142,7 +149,13 @@ public class QuizController implements Initializable {
             questionLabel.setVisible(false);
             // scoreLabel.setVisible(true);
             // scoreLabel.setText("You got : " + questionHandler.getScore() +"/" + (questionHandler.getNumberOfQuestions()-1));
+            //ScoreController controller = new ScoreController();
+            //controller.initData(questionHandler, userAnswers);
+            //loader.setController(controller);
 
+            QuestionAnswers qA =  QuestionAnswers.getInstance(questionHandler, userAnswers);
+
+            // Loads the quiz scene (spelt wrong accidentally)
             Parent root =  FXMLLoader.load(getClass().getResource("score.fxml"));
             // Change the size of the window, stage is controlled by the scene
             Stage quizStage = (Stage) ((Node) event.getSource()).getScene().getWindow();

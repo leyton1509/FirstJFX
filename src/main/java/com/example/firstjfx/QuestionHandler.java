@@ -14,6 +14,10 @@ public class QuestionHandler {
      */
     private int numberOfQuestions = 1;
 
+    public ArrayList<Question> getQuestions() {
+        return questions;
+    }
+
     /**
      * array of questions
      */
