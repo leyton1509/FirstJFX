@@ -1,6 +1,7 @@
 package com.example.firstjfx;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -125,7 +126,7 @@ public class QuizController implements Initializable {
      * if there's no questions then print the score
      */
     @FXML
-    protected void nextQuestion() {
+    protected void nextQuestion(Event event) throws IOException {
         submitQuizAnswerButton.setVisible(true);
         nextQuestionButton.setVisible(false);
         questionNumber++;
@@ -134,16 +135,20 @@ public class QuizController implements Initializable {
         }
         else{
             submitQuizAnswerButton.setVisible(false);
-            checkbox1.setVisible(false);
-            checkbox2.setVisible(false);
-            checkbox3.setVisible(false);
-            checkbox4.setVisible(false);
+            setVisibleCheckboxes(false, false, false, false);
             quizLabel.setVisible(false);
             noteLabel.setVisible(false);
             numberLabel.setVisible(false);
             questionLabel.setVisible(false);
-            scoreLabel.setVisible(true);
-            scoreLabel.setText("You got : " + questionHandler.getScore() +"/" + (questionHandler.getNumberOfQuestions()-1));
+            // scoreLabel.setVisible(true);
+            // scoreLabel.setText("You got : " + questionHandler.getScore() +"/" + (questionHandler.getNumberOfQuestions()-1));
+
+            Parent root =  FXMLLoader.load(getClass().getResource("score.fxml"));
+            // Change the size of the window, stage is controlled by the scene
+            Stage quizStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene quizScene = new Scene(root, 300, 350);
+            quizStage.setScene(quizScene);
+            quizStage.show();
         }
     }
 

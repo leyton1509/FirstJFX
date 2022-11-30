@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aabd948-f8cb-4b44-b713-089679467fee" name="Changes" comment="Moved check box visible commands into a method for redundacy">
+    <list default="true" id="7aabd948-f8cb-4b44-b713-089679467fee" name="Changes" comment="Reput in code that was accidentally deleted with making the text boxes visible">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/ScoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuizController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +84,7 @@
       <workItem from="1669802286004" duration="443000" />
       <workItem from="1669802741322" duration="9510000" />
       <workItem from="1669818391572" duration="2580000" />
-      <workItem from="1669840809570" duration="1836000" />
+      <workItem from="1669840809570" duration="2166000" />
     </task>
     <task id="LOCAL-00001" summary="Working logging system">
       <created>1669737780272</created>
@@ -133,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669842559631</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Reput in code that was accidentally deleted with making the text boxes visible">
+      <created>1669842715813</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669842715814</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +167,8 @@
     <MESSAGE value="Added an alert to signing in" />
     <MESSAGE value="Added support for a new question type, where the user can enter an answer instead" />
     <MESSAGE value="Moved check box visible commands into a method for redundacy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved check box visible commands into a method for redundacy" />
+    <MESSAGE value="Reput in code that was accidentally deleted with making the text boxes visible" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reput in code that was accidentally deleted with making the text boxes visible" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
