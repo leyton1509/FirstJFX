@@ -64,7 +64,7 @@ public class HelloController {
         Parent root =  FXMLLoader.load(getClass().getResource("quizSceme.fxml"));
         // Change the size of the window, stage is controlled by the scene
         quizStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        quizScene = new Scene(root, 375, 300);
+        quizScene = new Scene(root, 300, 350);
         quizStage.setScene(quizScene);
         quizStage.show();
     }
