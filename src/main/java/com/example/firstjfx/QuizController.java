@@ -218,7 +218,10 @@ public class QuizController implements Initializable {
 
         // Sets the checkboxes to unselected for every question
 
-        setVisibleCheckboxes(false, false, false,false);
+        checkbox1.setSelected(false);
+        checkbox2.setSelected(false);
+        checkbox3.setSelected(false);
+        checkbox4.setSelected(false);
         inputAnswerBox.setText("");
 
         // Depending on the amount of answers, display the right amount of checkboxes
