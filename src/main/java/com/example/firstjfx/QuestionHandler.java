@@ -4,11 +4,25 @@ import java.util.ArrayList;
 
 public class QuestionHandler {
 
+    /**
+     * The score of the user
+     */
     private int score = 0;
+
+    /**
+     * The number of questions
+     */
     private int numberOfQuestions = 1;
+
+    /**
+     * array of questions
+     */
     private ArrayList<Question> questions = new ArrayList<>();
 
 
+    /**
+     * Constructor, add any questions here and it automatically updates the UI
+     */
     public QuestionHandler(){
 
         addQuestion("Which of these animals are venomous?", new String[]{"Cat", "Platypus", "Dart Frog", "Jackal"}, 1, "Male platypus' have a venomous spour on their hind legs!");
@@ -19,29 +33,54 @@ public class QuestionHandler {
 
     }
 
+    /**
+     * @param _qTitle the title of question
+     * @param _answers the answers to the question
+     * @param _correctAnswer the correct answer
+     */
     private void addQuestion(String _qTitle, String[] _answers, int _correctAnswer){
         questions.add(new Question(numberOfQuestions, _qTitle, _answers, _correctAnswer));
         numberOfQuestions++;
     }
+
+    /**
+     * @param _qTitle the title of question
+     * @param _answers the answers to the question
+     * @param _correctAnswer the correct answer
+     * @param _note the note to the question
+     */
 
     private void addQuestion(String _qTitle, String[] _answers, int _correctAnswer, String _note){
         questions.add(new Question(numberOfQuestions, _qTitle, _answers, _correctAnswer, _note));
         numberOfQuestions++;
     }
 
+    /**
+     * @return returns the score
+     */
     public int getScore() {
         return score;
     }
 
+    /**
+     * @return the number of questions
+     */
     public int getNumberOfQuestions() {
         return numberOfQuestions;
     }
 
+    /**
+     * @param number the question to return
+     * @return the question associated with the number
+     */
     public Question returnQuestion(int number){
         number--;
         return questions.get(number);
     }
 
+    /**
+     * Increase the score by 1
+     */
     public void increaseScore(){
         score++;
     }

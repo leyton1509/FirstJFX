@@ -19,50 +19,107 @@ import java.util.ResourceBundle;
 
 public class QuizController implements Initializable {
 
-    private Stage quizStage;
-    private Scene quizScene;
+
+    /**
+     * Question number to track the question number
+     */
     public int questionNumber = 1;
+
+    /**
+     * Label for quiz
+     */
 
     @FXML
     public Label quizLabel;
 
+    /**
+     * Label for the note at the end of question
+     */
+
     @FXML
     public Label noteLabel;
 
+    /**
+     * Question number
+     */
     @FXML
     public Label numberLabel;
+
+    /**
+     * Question title
+     */
 
     @FXML
     public Label questionLabel;
 
+    /**
+     * Score label
+     */
+
     @FXML
     public Label scoreLabel;
+
+    /**
+     * Checkbox answer 1
+     */
 
     @FXML
     public CheckBox checkbox1;
 
+    /**
+     * Checkbox answer 2
+     */
+
     @FXML
     public CheckBox checkbox2;
 
+    /**
+     * Checkbox answer 3
+     */
     @FXML
     public CheckBox checkbox3;
+
+    /**
+     * Checkbox answer 4
+     */
 
     @FXML
     public CheckBox checkbox4;
 
+    /**
+     * Button to submit answer
+     */
+
     @FXML
     public Button submitQuizAnswerButton;
 
+
+    /**
+     * Button to go to next question
+     */
     @FXML
     public Button nextQuestionButton;
 
+    /**
+     * Question handler which handles question info
+     */
+
     private QuestionHandler questionHandler = new QuestionHandler();
 
+    /**
+     * Calls set question when this scene is initialised
+     * @param url url
+     * @param resourceBundle resourceBundle
+     */
     @Override @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setQuestion(questionNumber);
     }
 
+    /**
+     * Sets the correct question info inside the scene
+     * if there's no questions then print the score
+     */
     @FXML
     protected void nextQuestion() {
         submitQuizAnswerButton.setVisible(true);
@@ -86,13 +143,20 @@ public class QuizController implements Initializable {
         }
     }
 
+    /**
+     * Called when the submit button is clicked
+     */
     @FXML
     protected void submitAnswer() {
         submitQuizAnswerButton.setVisible(false);
         nextQuestionButton.setVisible(true);
         noteLabel.setText(questionHandler.returnQuestion(questionNumber).getNote());
 
+        // Gets the correct answer
+
         int ansLoc = questionHandler.returnQuestion(questionNumber).getCorrectAnswerNumber();
+
+        // If the answer and the corresponding checkbox is checked then the user got it right
 
         if(ansLoc == 0){
             if(checkbox1.isSelected() && !checkbox2.isSelected() && !checkbox3.isSelected() && !checkbox4.isSelected()){
@@ -116,12 +180,15 @@ public class QuizController implements Initializable {
                 System.out.println("Answer 4 correct");
             }
         }
-
-
     }
 
+    /**
+     * Sets all the scene info to the correct question information
+     * @param questionNumber the question to add
+     */
     public void setQuestion(int questionNumber){
 
+        // returns the question from question handler
         Question currentQuestion = questionHandler.returnQuestion(questionNumber);
         numberLabel.setText(questionNumber + ".");
         questionLabel.setText(currentQuestion.getQuestionTitle());
@@ -130,10 +197,14 @@ public class QuizController implements Initializable {
         System.out.println(currentQuestion.getNumOfAnswers());
         System.out.println(Arrays.toString(currentQuestion.getAnswers()));
 
+        // Sets the checkboxes to unselected for every question
+
         checkbox1.setSelected(false);
         checkbox2.setSelected(false);
         checkbox3.setSelected(false);
         checkbox4.setSelected(false);
+
+        // Depending on the amount of answers, display the right amount of checkboxes
 
         switch (currentQuestion.getNumOfAnswers()){
             case 2:
@@ -174,12 +245,6 @@ public class QuizController implements Initializable {
 
     }
 
-
-
-    @FXML
-    protected void setUpQuiz() {
-        setQuestion(questionNumber);
-    }
 
 
 }

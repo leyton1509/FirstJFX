@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aabd948-f8cb-4b44-b713-089679467fee" name="Changes" comment="Quiz system working">
+    <list default="true" id="7aabd948-f8cb-4b44-b713-089679467fee" name="Changes" comment="Changed the bg colour">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuestionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuestionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuizController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,17 +36,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "L:/Novus/Code/JFX/FirstJFX/src/main/java/com/example/firstjfx",
-    "last_opened_file_path": "L:/Novus/Code/JFX/FirstJFX/target/classes/com/example/firstjfx",
-    "settings.editor.selected.configurable": "preferences.JavaFX"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_directory_selection&quot;: &quot;L:/Novus/Code/JFX/FirstJFX/src/main/java/com/example/firstjfx&quot;,
+    &quot;last_opened_file_path&quot;: &quot;L:/Novus/Code/JFX/FirstJFX/target/classes/com/example/firstjfx&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="L:\Novus\Code\JFX\FirstJFX\target\classes\com\example\firstjfx" />
@@ -82,7 +85,8 @@
       <workItem from="1669735606389" duration="1338000" />
       <workItem from="1669736954004" duration="864000" />
       <workItem from="1669802286004" duration="443000" />
-      <workItem from="1669802741322" duration="9078000" />
+      <workItem from="1669802741322" duration="9510000" />
+      <workItem from="1669818391572" duration="1519000" />
     </task>
     <task id="LOCAL-00001" summary="Working logging system">
       <created>1669737780272</created>
@@ -98,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669810550422</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Changed the bg colour">
+      <created>1669814415234</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669814415234</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,7 +129,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Working logging system" />
     <MESSAGE value="Quiz system working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quiz system working" />
+    <MESSAGE value="Changed the bg colour" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the bg colour" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
