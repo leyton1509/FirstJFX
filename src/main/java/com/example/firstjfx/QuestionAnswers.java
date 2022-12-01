@@ -2,43 +2,81 @@ package com.example.firstjfx;
 
 import java.util.ArrayList;
 
+/**
+ * A singleton class which can only have one instance
+ * Needed to transfer info between scenes
+ */
 public final class QuestionAnswers {
-        private static QuestionAnswers INSTANCE;
-        private String info = "Initial info class";
-        private QuestionHandler questionHandler;
-        private ArrayList<String> answers;
 
-        public QuestionHandler getQuestionHandler() {
-            return questionHandler;
-        }
+    /**
+     * The static instance of the class
+     */
+    private static QuestionAnswers INSTANCE;
 
-        public ArrayList<String> getAnswers() {
-            return answers;
-        }
+    /**
+     * The question handler needed
+     */
+    private QuestionHandler questionHandler;
 
-        QuestionAnswers(QuestionHandler _questionHandler, ArrayList<String> _answers) {
-                questionHandler = _questionHandler;
-                answers = _answers;
-        }
+    /**
+     * The answers the users provided
+     */
+    private ArrayList<String> answers;
 
-        QuestionAnswers() {
-        }
+    /**
+     * @return The question handler
+     */
+    public QuestionHandler getQuestionHandler() {
+        return questionHandler;
+    }
 
-        public static QuestionAnswers getInstance(QuestionHandler _questionHandler,  ArrayList<String> answers) {
-                if(INSTANCE == null) {
-                    INSTANCE = new QuestionAnswers(_questionHandler,  answers);
-                }
+    /**
+     * @return the answers
+     */
+    public ArrayList<String> getAnswers() {
+        return answers;
+    }
 
-                return INSTANCE;
-            }
+    /**
+     * @param _questionHandler Passing in the question handler
+     * @param _answers Passing in the answers
+     */
+    QuestionAnswers(QuestionHandler _questionHandler, ArrayList<String> _answers) {
+            questionHandler = _questionHandler;
+            answers = _answers;
+    }
 
-        public static QuestionAnswers getInstance() {
+    /**
+     * Empty constructor to allow the other class to call it
+     */
+    QuestionAnswers() {
+    }
+
+    /**
+     * @param _questionHandler The question handler to add
+     * @param answers The users input's
+     * @return the instance of the class
+     * Only create if it has not been created before
+     */
+    public static QuestionAnswers getInstance(QuestionHandler _questionHandler,  ArrayList<String> answers) {
             if(INSTANCE == null) {
-                INSTANCE = new QuestionAnswers();
+                INSTANCE = new QuestionAnswers(_questionHandler,  answers);
             }
 
             return INSTANCE;
         }
+
+    /**
+     * @return The instance
+     * No parameters for the second class call
+     */
+    public static QuestionAnswers getInstance() {
+        if(INSTANCE == null) {
+            INSTANCE = new QuestionAnswers();
+        }
+
+        return INSTANCE;
+    }
 
 
 

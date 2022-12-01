@@ -26,7 +26,7 @@ public class QuizController implements Initializable {
      * A list of all the answers
      */
 
-    private ArrayList<String> userAnswers;
+    private ArrayList<String> userAnswers = new ArrayList<>();
 
 
     /**
@@ -159,7 +159,7 @@ public class QuizController implements Initializable {
             Parent root =  FXMLLoader.load(getClass().getResource("score.fxml"));
             // Change the size of the window, stage is controlled by the scene
             Stage quizStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene quizScene = new Scene(root, 300, 350);
+            Scene quizScene = new Scene(root, 600, 350);
             quizStage.setScene(quizScene);
             quizStage.show();
         }
@@ -184,27 +184,49 @@ public class QuizController implements Initializable {
                 if(checkbox1.isSelected() && !checkbox2.isSelected() && !checkbox3.isSelected() && !checkbox4.isSelected()){
                     questionHandler.increaseScore();
                     System.out.println("Answer 1 correct");
+
                 }
             }else if(ansLoc == 1){
                 if(!checkbox1.isSelected() && checkbox2.isSelected() && !checkbox3.isSelected() && !checkbox4.isSelected()){
                     questionHandler.increaseScore();
                     System.out.println("Answer 2 correct");
+
                 }
             }else if(ansLoc == 2){
                 if(!checkbox1.isSelected() && !checkbox2.isSelected() && checkbox3.isSelected() && !checkbox4.isSelected()){
                     questionHandler.increaseScore();
                     System.out.println("Answer 3 correct");
+
                 }
             }
             else if(ansLoc == 3){
                 if(!checkbox1.isSelected() && !checkbox2.isSelected() && !checkbox3.isSelected() && checkbox4.isSelected()){
                     questionHandler.increaseScore();
                     System.out.println("Answer 4 correct");
+
                 }
             }
+
+            String ans = "";
+
+            if(checkbox1.isSelected()){
+                ans = ans + checkbox1.getText() + " ";
+            }
+            if(checkbox2.isSelected()){
+                ans = ans + checkbox2.getText() + " ";
+            }
+            if(checkbox3.isSelected()){
+                ans = ans + checkbox3.getText() + " ";
+            }
+            if(checkbox4.isSelected()){
+                ans = ans + checkbox4.getText() + " ";
+            }
+            userAnswers.add(ans);
+
         }
         else if (typeOfQ.equals("inputType")){
             String ans = questionHandler.returnQuestion(questionNumber).getAnswers()[0];
+            userAnswers.add(inputAnswerBox.getText());
             if(inputAnswerBox.getText().equals(ans)){
                 questionHandler.increaseScore();
                 System.out.println("Answer of " + ans + " correct");

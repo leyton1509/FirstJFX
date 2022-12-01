@@ -10,22 +10,42 @@ import java.util.ResourceBundle;
 
 public class ScoreController implements Initializable {
 
-    private QuestionAnswers qa;
     @FXML
-    protected TextArea FBox;
+    protected TextArea questionTextArea;
+
+    @FXML
+    protected TextArea userTextArea;
+
+    @FXML
+    protected TextArea answerTextArea;
+
+    private QuestionAnswers qaClass;
+
+
 
     @Override @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        qa = QuestionAnswers.getInstance();
-        QuestionHandler qh = qa.getQuestionHandler();
+        qaClass = QuestionAnswers.getInstance();
+        QuestionHandler qh = qaClass.getQuestionHandler();
+        ArrayList<String> ans = qaClass.getAnswers();
 
-        StringBuilder text = new StringBuilder();
+
+        StringBuilder questionText = new StringBuilder();
+        StringBuilder answerText = new StringBuilder();
+        StringBuilder userAnswerText = new StringBuilder();
 
         for (Question q : qh.getQuestions()) {
-            text.append(q.getQuestionTitle()).append(" \n");
+            questionText.append(q.getQuestionNumber() + ". " + q.getQuestionTitle() + " \n");
+            answerText.append(q.getAnswers()[q.getCorrectAnswerNumber()] + "\n");
         }
 
-        FBox.setText(text.toString());
+        for (String input : ans) {
+            userAnswerText.append(input + "\n");
+        }
+
+        questionTextArea.setText(questionText.toString());
+        userTextArea.setText(userAnswerText.toString());
+        answerTextArea.setText(answerText.toString());
     }
 
 
