@@ -148,12 +148,12 @@ public class QuizController implements Initializable {
             numberLabel.setVisible(false);
             questionLabel.setVisible(false);
             // scoreLabel.setVisible(true);
-            // scoreLabel.setText("You got : " + questionHandler.getScore() +"/" + (questionHandler.getNumberOfQuestions()-1));
+            String score =  (questionHandler.getScore() +"/" + (questionHandler.getNumberOfQuestions()-1));
             //ScoreController controller = new ScoreController();
             //controller.initData(questionHandler, userAnswers);
             //loader.setController(controller);
 
-            QuestionAnswers qA =  QuestionAnswers.getInstance(questionHandler, userAnswers);
+            QuestionAnswers qA =  QuestionAnswers.getInstance(questionHandler, userAnswers, score);
 
             // Loads the quiz scene (spelt wrong accidentally)
             Parent root =  FXMLLoader.load(getClass().getResource("score.fxml"));

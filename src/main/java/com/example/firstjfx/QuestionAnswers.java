@@ -23,9 +23,23 @@ public final class QuestionAnswers {
      */
     private ArrayList<String> answers;
 
+
+    /**
+     * @return The usersscores
+     */
+    public String getUserScore() {
+        return userScore;
+    }
+
+    /**
+     * The sco the users provided
+     */
+    private String userScore = "";
+
     /**
      * @return The question handler
      */
+
     public QuestionHandler getQuestionHandler() {
         return questionHandler;
     }
@@ -41,9 +55,10 @@ public final class QuestionAnswers {
      * @param _questionHandler Passing in the question handler
      * @param _answers Passing in the answers
      */
-    QuestionAnswers(QuestionHandler _questionHandler, ArrayList<String> _answers) {
-            questionHandler = _questionHandler;
-            answers = _answers;
+    QuestionAnswers(QuestionHandler _questionHandler, ArrayList<String> _answers, String _userScore) {
+        questionHandler = _questionHandler;
+        answers = _answers;
+        userScore = _userScore;
     }
 
     /**
@@ -58,9 +73,9 @@ public final class QuestionAnswers {
      * @return the instance of the class
      * Only create if it has not been created before
      */
-    public static QuestionAnswers getInstance(QuestionHandler _questionHandler,  ArrayList<String> answers) {
+    public static QuestionAnswers getInstance(QuestionHandler _questionHandler,  ArrayList<String> answers, String _userScore) {
             if(INSTANCE == null) {
-                INSTANCE = new QuestionAnswers(_questionHandler,  answers);
+                INSTANCE = new QuestionAnswers(_questionHandler,  answers,  _userScore);
             }
 
             return INSTANCE;

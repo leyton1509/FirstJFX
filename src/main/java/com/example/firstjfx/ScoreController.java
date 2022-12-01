@@ -2,6 +2,7 @@ package com.example.firstjfx;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 import java.net.URL;
@@ -18,6 +19,9 @@ public class ScoreController implements Initializable {
 
     @FXML
     protected TextArea answerTextArea;
+
+    @FXML
+    protected Label scoreLabel;
 
     private QuestionAnswers qaClass;
 
@@ -46,6 +50,7 @@ public class ScoreController implements Initializable {
         questionTextArea.setText(questionText.toString());
         userTextArea.setText(userAnswerText.toString());
         answerTextArea.setText(answerText.toString());
+        scoreLabel.setText("You got : " + qaClass.getUserScore() + "!");
     }
 
 

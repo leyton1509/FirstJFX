@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7aabd948-f8cb-4b44-b713-089679467fee" name="Changes" comment="Added a singleton class to be able to store info across scenes, need to implement the scoring page though">
+    <list default="true" id="7aabd948-f8cb-4b44-b713-089679467fee" name="Changes" comment="Score scene is now nearly complete just need to add the score">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuestionAnswers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuestionAnswers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuizController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/firstjfx/QuizController.java" afterDir="false" />
@@ -92,7 +92,8 @@
       <workItem from="1669802741322" duration="9510000" />
       <workItem from="1669818391572" duration="2580000" />
       <workItem from="1669840809570" duration="5277000" />
-      <workItem from="1669886765945" duration="2091000" />
+      <workItem from="1669886765945" duration="2125000" />
+      <workItem from="1669888901160" duration="423000" />
     </task>
     <task id="LOCAL-00001" summary="Working logging system">
       <created>1669737780272</created>
@@ -164,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669846082885</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Score scene is now nearly complete just need to add the score">
+      <created>1669888885408</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669888885408</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +200,8 @@
     <MESSAGE value="Reput in code that was accidentally deleted with making the text boxes visible" />
     <MESSAGE value="Added a new controller and scence which will be the score and feedback" />
     <MESSAGE value="Added a singleton class to be able to store info across scenes, need to implement the scoring page though" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a singleton class to be able to store info across scenes, need to implement the scoring page though" />
+    <MESSAGE value="Score scene is now nearly complete just need to add the score" />
+    <option name="LAST_COMMIT_MESSAGE" value="Score scene is now nearly complete just need to add the score" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
